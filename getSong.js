@@ -1,9 +1,13 @@
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const ytsr = require("ytsr");
+const ytpl = require("ytpl");
 
 module.exports = async song => {
   const url = await resolveSongUrl(song);
+
+  const playlistId = song.match(/^http.+playlist\?list=(.+)&?/)?.[1];
+	if (playlistId) return downloadPlaylist(playlistId);
 
   const songInfo = await ytdl.getInfo(url).catch(error => {
 		switch (error.message) {
@@ -15,7 +19,7 @@ module.exports = async song => {
 
   console.log(songInfo.videoDetails.lengthSeconds);
 
-  ytdl.downloadFromInfo(songInfo, { filter: "audioonly" }).pipe(fs.createWriteStream("audio.wav"));
+  ytdl.downloadFromInfo(songInfo, { filter: "audioonly" }).pipe(fs.createWriteStream(`./downloads/${ songInfo.videoDetails.videoId }.wav`));
 };
 
 async function resolveSongUrl(song) {
@@ -24,4 +28,12 @@ async function resolveSongUrl(song) {
 	const result = await ytsr(song, { limit: 1 });
 
   return result.items[0].url;
+}
+
+async function downloadPlaylist(playlistId) {
+  const playlist = await ytpl(playlistId);
+  playlist.items.forEach(songInfo => {
+    console.log(songInfo.durationSec);
+    ytdl(songInfo.shortUrl, { filter: "audioonly" }).pipe(fs.createWriteStream(`./downloads/${ songInfo.id }.wav`));
+  });
 }
