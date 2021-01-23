@@ -1,0 +1,27 @@
+{
+  "name": "qhacks",
+  "version": "1.0.0",
+  "description": "Converts youtube videos to music sheets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/penguin022/QHacks.git"
+  },
+  "keywords": [
+    "midi",
+    "youtube",
+    "music"
+  ],
+  "author": "Ching Chang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/penguin022/QHacks/issues"
+  },
+  "homepage": "https://github.com/penguin022/QHacks#readme",
+  "dependencies": {
+    "ytdl-core": "^4.4.4"
+  }
+}
