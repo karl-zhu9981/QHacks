@@ -1,7 +1,9 @@
 .DS_Store
 node_modules
 downloads
-/dist
+frontend/dist
+firebase-debug.log
+.firebase
 
 # local env files
 .env.local
