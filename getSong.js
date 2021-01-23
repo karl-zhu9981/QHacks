@@ -1,7 +1,10 @@
-const ytdl = require("ytdl-core");
 const fs = require("fs");
+const ytdl = require("ytdl-core");
+const ytsr = require("ytsr");
 
-module.exports = async url => {
+module.exports = async song => {
+  const url = await resolveSongUrl(song);
+
   const songInfo = await ytdl.getInfo(url).catch(error => {
 		switch (error.message) {
 			case "Not a youtube domain": return console.error("I can only play songs from Youtube");
@@ -14,3 +17,11 @@ module.exports = async url => {
 
   ytdl.downloadFromInfo(songInfo, { filter: "audioonly" }).pipe(fs.createWriteStream("audio.wav"));
 };
+
+async function resolveSongUrl(song) {
+	if (song.match(/^http/)) return song;
+
+	const result = await ytsr(song, { limit: 1 });
+
+  return result.items[0].url;
+}
