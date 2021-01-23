@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import http from "http";
 
 export default {
   name: "Convert",
@@ -20,7 +20,22 @@ export default {
   },
   methods: {
     async downloadSong(searchString) {
-      // make a post request to our backend
+      const client = http.request({
+        hostname : "localhost",
+        port : 8000,
+        method : "POST",
+        path : "/"
+      }, response => {
+        let chunks = [];
+
+				response.on("data", chunk => chunks.push(chunk));
+				response.on("end", () => {
+					const responseBody = Buffer.concat(chunks).toString();
+					chunks = null;
+				});
+      });
+      client.write(searchString);
+      client.end();
     }
   }
 };
