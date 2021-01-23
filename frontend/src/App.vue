@@ -26,4 +26,38 @@
     }
   }
 }
+h1{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 195px;
+  line-height: 238px;
+  color: #18181A;
+}
+h2{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 140px;
+  line-height: 171px;
+  color: #18181A;
+}
+h3{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100px;
+  line-height: 122px;
+  color: #18181A;
+}
+h4{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 49px;
+  color: #727272;
+}
+
+
 </style>
