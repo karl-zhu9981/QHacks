@@ -21,7 +21,6 @@ def result():
             bpm=60,
         )
     process.convert()
-    time.sleep(5)
     _notify()
     return
 
