@@ -1,10 +1,18 @@
 <template>
-  <div class="about">
-    <h1>About</h1>
-    <br>
-    <h2>Youtune is Music to Sheet Conversion Software for people of all ages and skill levels!</h2>
-    <h2>Youtune was created with love & lots of coffee by Karl, Abby, Ching Chang, and Victor</h2>
+  <div class="container">
+      <div class="text-col">
+      <div class="about">
+        <h1>About</h1>
+        <br>
+        <h2>Youtune is Music to Sheet Conversion Software for people of all ages and skill levels!</h2>
+        <h2>Youtune was created with love & lots of coffee by Karl, Abby, Ching Chang, and Victor</h2>
+      </div>
+      <div class="image-col">
+        <br>
+        <img class= "pianoImage" alt="pianoImage" src="@/assets/Group 353.png">
+      </div>
   </div>
+</div>
 </template>
 
 <script>
