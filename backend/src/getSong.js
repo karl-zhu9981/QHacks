@@ -14,7 +14,7 @@ module.exports = searchString => {
       };
     });
     const timestamp = new Date().getTime();
-    const file = fs.createWriteStream(`../midiconversion/${ "default" }.wav`);
+    const file = fs.createWriteStream(`./downloads/${ timestamp }.wav`);
     ytdl.downloadFromInfo(songInfo, { filter: "audioonly" }).pipe(file);
 
     file.on("finish", () => resolve(timestamp));

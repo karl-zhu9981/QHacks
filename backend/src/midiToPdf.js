@@ -7,7 +7,7 @@ module.exports = async id => {
   const page = await browser.newPage();
   await page.goto("https://solmire.com/miditosheetmusic");
   const input = await page.$("input");
-  await input.uploadFile(`./downloads/${ id }.mid`);
+  await input.uploadFile(`./downloads/${ id }.midi`);
   const button = await page.$("input[type=image]");
   button.press("Enter");
 
@@ -17,9 +17,10 @@ module.exports = async id => {
 
   let promises = [];
   for (let i = 0; i < urls.length; i++) {
-    promises.push(downloadImage(urls[0], i));
+    promises.push(downloadImage(urls[i], i));
   }
 
   Promise.allSettled(promises).then(() => makePdf(id));
   promises = null;
+  browser.close();
 }

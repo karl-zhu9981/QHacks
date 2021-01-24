@@ -1,16 +1,18 @@
 const fs = require("fs");
 const PDFDocument = require("pdfkit");
 
-module.exports = async id => {
-  let doc = new PDFDocument({ autoFirstPage: false });
-  doc.pipe(fs.createWriteStream(`./${ id }.pdf`));
+module.exports = id => {
+  new Promise(async (resolve, reject) => {
+    let doc = new PDFDocument({ autoFirstPage: false });
+    doc.pipe(fs.createWriteStream(`./${ id }.pdf`));
 
-  const pages = fs.readdirSync("./pages").length;
-  for (let page = 0; page < pages; page++) {
-    await addPage(doc, page);
-  }
-  doc.end();
-  removeDirectory();
+    const pages = fs.readdirSync("./pages").length;
+    for (let page = 0; page < pages; page++) {
+      await addPage(doc, page);
+    }
+    removeDirectory();
+    resolve(doc.end());
+  });
 };
 
 function removeDirectory() {
