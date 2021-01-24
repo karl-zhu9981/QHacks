@@ -25,6 +25,7 @@
     font-weight: bold;
     color: #686767;
     text-decoration: none;
+    word-spacing: 80px;
     &.router-link-exact-active {
       color: #18181A;
       text-decoration: none;
