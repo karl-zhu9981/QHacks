@@ -139,22 +139,21 @@ def parse_args():
 
 
 def main():
-       # args = parse_args()
+        args = parse_args()
         process = converter.Converter(
-            infile="default.wav",
-            outfile="out.mid",
-            time_window=5.0,
-            activation_level=0.0,
-            condense=False,
-            condense_max=False,
-            max_note_length=0,
-            note_count=0,
-            transpose=0,
-            pitch_set=[],
-            pitch_range=None,
-            progress=progress_bar.ProgressBar(),
-            #None if args.no_progress else 
-            bpm=60,
+            infile=args.infile,
+            outfile=args.output,
+            time_window=args.time_window,
+            activation_level=args.activation_level,
+            condense=args.condense,
+            condense_max=args.condense_max,
+            max_note_length=args.max_note_length,
+            note_count=args.note_count,
+            transpose=args.transpose,
+            pitch_set=args.pitch_set,
+            pitch_range=args.pitch_range,
+            progress=None if args.no_progress else progress_bar.ProgressBar(),
+            bpm=args.bpm,
         )
         process.convert()
         dataToSendBack= 'ching is a god'
