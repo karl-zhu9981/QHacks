@@ -161,7 +161,5 @@ def main():
         print(dataToSendBack)
         sys.stdout.flush()
 
-
-
 if __name__ == "__main__":
     main()
