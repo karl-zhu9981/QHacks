@@ -16,7 +16,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsl(0, 0%, 100%);
-  padding: 60px;
+  padding: 100px;
+  padding-top:60px;
 }
 #nav {
   padding-bottom: 70px;
@@ -47,7 +48,7 @@ input[type=text], select {
 }
 .logo{ 
 	position:fixed; 
-	left:60px; 
+	left:100px; 
   max-width: 20%;
 } 
 .landingImage{
@@ -72,14 +73,14 @@ h2{
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  color: #A397EF;
+  color: #6E67A9;
 }
 h3{
   font-family: Montserrat;
   font-style: normal;
   font-weight: 900;
   font-size: 5.0rem;
-  color:#6E67A9;
+  color:#18181A;
 }
 h4{
   font-family: Montserrat;
