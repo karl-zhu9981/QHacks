@@ -17,11 +17,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsl(0, 0%, 100%);
-  padding: 100px;
+  padding: 130px;
   padding-top:60px;
 }
 #nav {
-  padding-bottom: 100px;
+  padding-bottom: 120px;
   text-align: right;
   a {
     font-weight: bold;
@@ -54,7 +54,7 @@ input[type=text], select {
   max-width: 20%;
 } 
 .landingImage{
-  max-width: 70%;
+  max-width: 75%;
   float: right;
 }
 
