@@ -39,10 +39,12 @@ export default {
   methods: {
     async downloadSong(searchString) {
       if (!this.searchString) return;
-      this.searchString = "";
       axios.post("http://localhost:8000", searchString, {
         responseType: "arraybuffer"
-      }).then(response => this.saveByteArray(response.data));
+      }).then(response => {
+        this.searchString = "";
+        this.saveByteArray(response.data)
+      });
     },
     saveByteArray(responseBody) {
       const url = window.URL.createObjectURL(new Blob([responseBody], {
