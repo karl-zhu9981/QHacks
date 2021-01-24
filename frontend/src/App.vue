@@ -2,10 +2,12 @@
   <div id="app">
     <link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.5.3' type='text/css' media='all' />
     <div id="nav">
-      <img class= "logo" alt="Youtune" src="@/assets/Youtune.png" width='30px'>
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">  About </router-link>
-      <router-link to="/redirecttogooglelinkhere">  LOGIN </router-link>
+      <router-link :to="{ name: 'home' }">
+        <img class= "logo" alt="Youtune" src="@/assets/Youtune.png" width='30px'>
+      </router-link>
+      <router-link :to="{ name: 'home' }">Home</router-link>
+      <router-link :to="{ name: 'about' }">  About </router-link>
+      <router-link :to="{ name: 'dashboard' }">  LOGIN </router-link>
     </div>
     <router-view/>
   </div>
@@ -59,11 +61,11 @@ input[type=text]{
   display:flex;
   align-items: center
 }
-.logo{ 
-	position:fixed; 
-	left:100px; 
+.logo{
+	position:fixed;
+	left:100px;
   max-width: 20%;
-} 
+}
 .landingImage{
   width: 75%;
   float: right;
@@ -112,18 +114,5 @@ h5{
   line-height: 12;
   font-size: 1rem;
   color: #FFFFFF;
-}
-li {
-  background: #6E67A9;
-  border-radius: 84px;
-	padding:0% 14% ;
-	text-align: center;
-	text-decoration: none;
-	font-weight: 700;
-	cursor: pointer;
-  display: inline-block;
-  float: right;
-  margin: -78px;
-  position: relative;
 }
 </style>

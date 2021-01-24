@@ -5,6 +5,7 @@ frontend/dist
 firebase-debug.log
 .firebase
 config.json
+.vs
 
 # local env files
 .env.local

@@ -1,4 +1,4 @@
-# youtune
+# YouTune
 
 ## Project setup
 ```

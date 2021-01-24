@@ -6,6 +6,10 @@
 
 <script>
 export default {
-  name: "FAQ"
+  name: "Dashboard"
 };
 </script>
+
+<style>
+
+</style>

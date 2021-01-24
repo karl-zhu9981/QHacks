@@ -19,19 +19,14 @@ export default new Router({
       component: () => import("./views/About.vue")
     },
     {
-      path: "/contact",
-      name: "contact",
-      component: () => import("./views/Contact.vue")
-    },
-    {
       path: "/convert",
       name: "convert",
       component: () => import("./views/Convert.vue")
     },
     {
-      path: "/faq",
-      name: "faq",
-      component: () => import("./views/FAQ.vue")
+      path: "/dashboard",
+      name: "dashboard",
+      component: () => import("./views/Dashboard.vue")
     }
   ]
 });
