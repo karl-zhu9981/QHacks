@@ -2,7 +2,7 @@ const fs = require("fs");
 const PDFDocument = require("pdfkit");
 
 module.exports = id => {
-  new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     let doc = new PDFDocument({ autoFirstPage: false });
     doc.pipe(fs.createWriteStream(`./${ id }.pdf`));
 

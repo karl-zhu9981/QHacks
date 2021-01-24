@@ -1,3 +1,4 @@
+const fs = require("fs");
 let http = require("http");
 const getSong = require("./src/getSong.js");
 const midiToPdf = require("./src/midiToPdf.js");
@@ -6,10 +7,10 @@ const downloadMidi = require("./src/downloadMidi.js");
 
 http.createServer((request, response) => {
   response.writeHead(200, {
-    "Content-Type": "application/json",
+    "Content-Type": "application/pdf",
     "Access-Control-Allow-Origin": "*"
   });
-
+// https://www.youtube.com/watch?v=QkqyD7TOr7Q
   let chunks = [];
 
   request.on("data", chunk => chunks.push(chunk));
@@ -19,7 +20,10 @@ http.createServer((request, response) => {
     const timestamp = await getSong(responseBody).catch(error => console.log(error));
     const midiUrl = await wavToMidiUrl(timestamp);
     await downloadMidi(midiUrl, timestamp);
-    midiToPdf(timestamp);
+    await midiToPdf(timestamp);
+    const file = fs.readFileSync(`./${ timestamp }.pdf`);
+    response.write(file);
+    response.end();
   });
 }).listen(8000);
 

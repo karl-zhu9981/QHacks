@@ -27,34 +27,45 @@
 
 <script>
 import http from "http";
+import axios from "axios";
 
 export default {
   name: "Home",
   data() {
     return {
-      searchString: "",
-      errorMessage: "",
-      error: false
+      searchString: ""
     }
   },
   methods: {
     async downloadSong(searchString) {
-      const client = http.request({
-        hostname : "localhost",
-        port : 8000,
-        method : "POST",
-        path : "/"
-      }, response => {
-        let chunks = [];
-
-				response.on("data", chunk => chunks.push(chunk));
-				response.on("end", () => {
-					const responseBody = Buffer.concat(chunks).toString();
-					chunks = null;
-				});
+      if (!searchString) return;
+      axios.post("http://localhost:8000", searchString, {
+        responseType: "arraybuffer"
+      }).then(response => {
+        console.log(response.data)
+        // const d = base64ToArrayBuffer(response.data)
+        this.saveByteArray(response.data)
       });
-      client.write(searchString);
-      client.end();
+    },
+    base64ToArrayBuffer(base64) {
+      var binaryString = window.atob(base64);
+      var binaryLen = binaryString.length;
+      var bytes = new Uint8Array(binaryLen);
+      for (var i = 0; i < binaryLen; i++) {
+         var ascii = binaryString.charCodeAt(i);
+         bytes[i] = ascii;
+      }
+      return bytes;
+     },
+    saveByteArray(responseBody) {
+      const url = window.URL.createObjectURL(new Blob([responseBody], {
+        type: "arraybuffer"
+      }));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "sheet.pdf");
+      document.body.appendChild(link);
+      link.click();
     }
   }
 };
