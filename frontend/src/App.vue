@@ -5,6 +5,7 @@
       <img class= "logo" alt="Youtune" src="@/assets/Youtune.png" width='2%'>
       <router-link to="/">Home</router-link>
       <router-link to="/about">  About </router-link>
+      <router-link to="/redirecttogooglelinkhere">  LOGIN </router-link>
     </div>
     <router-view/>
   </div>
@@ -20,7 +21,7 @@
   padding-top:60px;
 }
 #nav {
-  padding-bottom: 70px;
+  padding-bottom: 100px;
   text-align: right;
   a {
     font-weight: bold;
@@ -42,6 +43,7 @@ input[type=text], select {
   box-sizing: border-box;
   border: 4px solid #A397EF;
 }
+
 .container{
   display:flex;
   align-items: center
@@ -90,6 +92,14 @@ h4{
   line-height: 10px;
   letter-spacing: 0em;
   text-align: left;
+  color: #FFFFFF;
+}
+h5{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 5;
+  font-size: 1rem;
   color: #FFFFFF;
 }
 li {
