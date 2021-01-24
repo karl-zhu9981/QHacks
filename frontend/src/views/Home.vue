@@ -14,6 +14,7 @@
             </form>
             <br>
             <br>
+            <br>
           </div>
           <div class="image-col">
             <br>
