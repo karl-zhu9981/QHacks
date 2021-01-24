@@ -9,7 +9,7 @@
                 <label for="fname"></label><br>
                 <div class="buttonwrapper">
                   <input type="text" id="youtubesite" name="youtubesite" placeholder="Paste a Youtube URL Link..."><br>
-                  <router-link to="{ name: 'Convert' }" tag="li"><h4>Convert</h4></router-link>
+                  <router-link to="{ name: 'Convert' }" tag="li" type="submit"><h4>Convert</h4></router-link>
                 </div>
             </form>
             <br>

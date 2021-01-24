@@ -36,11 +36,21 @@
 }
 input[type=text], select {
   width: 100%;
-  padding: 25px 20px;
-  margin: 8px 0;
+  padding: 24px 20px;
   display: inline-block;
   border-radius: 80px;
-  box-sizing: border-box;
+  font-weight: 900;
+  font-size: 1.2rem;
+  border: 4px solid #A397EF;
+}
+
+input[type=text]{
+  width: 100%;
+  padding: 24px 20px;
+  display: inline-block;
+  border-radius: 80px;
+  font-weight: 900;
+  font-size: 1.2rem;
   border: 4px solid #A397EF;
 }
 
@@ -89,7 +99,7 @@ h4{
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 10px;
+  line-height: 13px;
   letter-spacing: 0em;
   text-align: left;
   color: #FFFFFF;
@@ -98,21 +108,21 @@ h5{
   font-family: Montserrat;
   font-style: normal;
   font-weight: 800;
-  line-height: 5;
+  line-height: 12;
   font-size: 1rem;
   color: #FFFFFF;
 }
 li {
   background: #6E67A9;
-  border-radius: 80px;
-	padding:0% 13% ;
+  border-radius: 84px;
+	padding:0% 14% ;
 	text-align: center;
 	text-decoration: none;
 	font-weight: 700;
 	cursor: pointer;
   display: inline-block;
   float: right;
-  margin: -82px;
+  margin: -78px;
   position: relative;
 }
 </style>
