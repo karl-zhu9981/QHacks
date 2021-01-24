@@ -2,7 +2,7 @@
   <div id="app">
     <link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.5.3' type='text/css' media='all' />
     <div id="nav">
-      <img class= "logo" alt="Youtune" src="@/assets/Youtune.png" width='2%'>
+      <img class= "logo" alt="Youtune" src="@/assets/Youtune.png" width='30px'>
       <router-link to="/">Home</router-link>
       <router-link to="/about">  About </router-link>
       <router-link to="/redirecttogooglelinkhere">  LOGIN </router-link>
@@ -21,7 +21,7 @@
   padding-top:60px;
 }
 #nav {
-  padding-bottom: 120px;
+  padding-bottom: 110px;
   text-align: right;
   a {
     font-weight: bold;
@@ -54,7 +54,7 @@ input[type=text], select {
   max-width: 20%;
 } 
 .landingImage{
-  max-width: 75%;
+  width: 75%;
   float: right;
 }
 
