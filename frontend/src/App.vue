@@ -52,6 +52,7 @@ input[type=text]{
   font-weight: 900;
   font-size: 1.2rem;
   border: 4px solid #A397EF;
+  outline: none;
 }
 
 .container{
