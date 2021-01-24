@@ -160,6 +160,7 @@ def main():
         dataToSendBack= 'ching is a god'
         print(dataToSendBack)
         sys.stdout.flush()
+        return
 
 if __name__ == "__main__":
     main()
