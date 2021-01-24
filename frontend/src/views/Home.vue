@@ -2,15 +2,20 @@
   <div class="home">
     <section class="main-splash">
       <div class="container">
-        <div class="row">
-          <div class="column">
+          <div class="text-col">
             <h1>Convert Your Favourite Tunes</h1>
             <br>
+            <form>
+                <label for="fname"></label><br>
+                <input type="text" id="youtubesite" name="youtubesite" placeholder="Paste a Youtube URL Link..."><br>
+            </form>
+            <br>
+            <br>
           </div>
-          <div class="column">
-          <img class= "landingImage" alt="Landing Image" src="../assets/landingimage.png" style="float:right"
+          <div class="image-col">
+            <br>
+            <img class= "landingImage" alt="Landing Image" src="../assets/landingimage.png">
           </div>
-        </div>
       </div>
 	  </section>
   </div>
