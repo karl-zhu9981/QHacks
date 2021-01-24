@@ -139,7 +139,7 @@ def parse_args():
 
 
 def main():
-        args = parse_args()
+       # args = parse_args()
         process = converter.Converter(
             infile="default.wav",
             outfile="out.mid",
@@ -152,7 +152,8 @@ def main():
             transpose=0,
             pitch_set=[],
             pitch_range=None,
-            progress=None if args.no_progress else progress_bar.ProgressBar(),
+            progress=progress_bar.ProgressBar(),
+            #None if args.no_progress else 
             bpm=60,
         )
         process.convert()
