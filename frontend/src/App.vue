@@ -1,8 +1,9 @@
 <template>
   <div id="app">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Home </router-link> |
+      <router-link to="/about">About </router-link>
     </div>
     <router-view/>
   </div>
@@ -13,41 +14,46 @@
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: hsl(0, 0%, 100%);
 }
 #nav {
   padding: 30px;
+  text-align: right;
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #686767;
     &.router-link-exact-active {
-      color: #42b983;
+      color: #18181A;
     }
   }
 }
+.landingImage{
+	max-width: 50%;
+  float: right;
+}
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 h1{
-  font-family: Montserrat;
+  font-family: Avenir;
   font-style: normal;
   font-weight: 800;
-  font-size: 195px;
-  line-height: 238px;
+  font-size: 3.5rem;
   color: #18181A;
 }
 h2{
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  font-size: 140px;
-  line-height: 171px;
   color: #18181A;
 }
 h3{
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
-  font-size: 100px;
-  line-height: 122px;
   color: #18181A;
 }
 h4{
