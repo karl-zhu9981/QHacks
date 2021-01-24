@@ -6,6 +6,8 @@ firebase-debug.log
 .firebase
 config.json
 .vs
+midiconversion/default.wav
+midiconversion/output.mid
 
 # local env files
 .env.local

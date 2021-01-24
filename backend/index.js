@@ -1,6 +1,7 @@
 let http = require("http");
 const getSong = require("./src/getSong.js");
 const midiToPdf = require("./src/midiToPdf.js");
+const spawn = require("child_process").spawn;
 
 http.createServer((request, response) => {
   response.writeHead(200, {
@@ -14,7 +15,13 @@ http.createServer((request, response) => {
   request.on("end", async () => {
     const responseBody = Buffer.concat(chunks).toString();
     chunks = null;
-    console.log(await getSong(responseBody));
+    await getSong(responseBody).catch(error => {
+      console.log(error)
+    });
+    const pythonProcess = spawn("python", ["../../main.py"]);
+    pythonProcess.stdout.on("data", data => {
+      // do something
+    });
   });
 }).listen(8000);
 
