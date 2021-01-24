@@ -38,7 +38,8 @@ export default {
   },
   methods: {
     async downloadSong(searchString) {
-      if (!searchString) return;
+      if (!this.searchString) return;
+      this.searchString = "";
       axios.post("http://localhost:8000", searchString, {
         responseType: "arraybuffer"
       }).then(response => this.saveByteArray(response.data));
