@@ -4,8 +4,8 @@
       <div class="container">
           <div class="text-col" style=" margin-top:-50px; ">
             <h3>About</h3>
-            <h2>Youtune is Music to Sheet Conversion Software for people of all ages and skill levels!</h2>
-            <h2>Youtune was created with love & lots of coffee by Karl, Abby, Ching Chang, and Victor</h2>
+            <h2>Youtune is a music to Sheet Converter for beginners of all ages!</h2>
+            <h2>Youtune was created with love & lots of coffee by Karl Xhu, Abby Lui, Ching Chang, and Victor Zheng</h2>
           </div>
           <div class="image-col">
             <br>
