@@ -1,11 +1,13 @@
+const fs = require("fs");
 let http = require("http");
 const getSong = require("./src/getSong.js");
 const midiToPdf = require("./src/midiToPdf.js");
-const spawn = require("child_process").spawn;
+const wavToMidiUrl = require("./src/wavToMidiUrl.js");
+const downloadMidi = require("./src/downloadMidi.js");
 
 http.createServer((request, response) => {
   response.writeHead(200, {
-    "Content-Type": "application/json",
+    "Content-Type": "application/pdf",
     "Access-Control-Allow-Origin": "*"
   });
 
@@ -15,13 +17,13 @@ http.createServer((request, response) => {
   request.on("end", async () => {
     const responseBody = Buffer.concat(chunks).toString();
     chunks = null;
-    await getSong(responseBody).catch(error => {
-      console.log(error)
-    });
-    const pythonProcess = spawn("python", ["../../main.py"]);
-    pythonProcess.stdout.on("data", data => {
-      // do something
-    });
+    const timestamp = await getSong(responseBody).catch(error => console.log(error));
+    const midiUrl = await wavToMidiUrl(timestamp);
+    await downloadMidi(midiUrl, timestamp);
+    await midiToPdf(timestamp);
+    const file = fs.readFileSync(`./${ timestamp }.pdf`);
+    response.write(file);
+    response.end();
   });
 }).listen(8000);
 

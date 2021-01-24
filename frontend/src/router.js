@@ -17,16 +17,6 @@ export default new Router({
       path: "/about",
       name: "about",
       component: () => import("./views/About.vue")
-    },
-    {
-      path: "/convert",
-      name: "convert",
-      component: () => import("./views/Convert.vue")
-    },
-    {
-      path: "/dashboard",
-      name: "dashboard",
-      component: () => import("./views/Dashboard.vue")
     }
   ]
 });

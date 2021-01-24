@@ -27,34 +27,34 @@
 
 <script>
 import http from "http";
+import axios from "axios";
 
 export default {
   name: "Home",
   data() {
     return {
-      searchString: "",
-      errorMessage: "",
-      error: false
+      searchString: ""
     }
   },
   methods: {
     async downloadSong(searchString) {
-      const client = http.request({
-        hostname : "localhost",
-        port : 8000,
-        method : "POST",
-        path : "/"
-      }, response => {
-        let chunks = [];
-
-				response.on("data", chunk => chunks.push(chunk));
-				response.on("end", () => {
-					const responseBody = Buffer.concat(chunks).toString();
-					chunks = null;
-				});
+      if (!this.searchString) return;
+      axios.post("http://localhost:8000", searchString, {
+        responseType: "arraybuffer"
+      }).then(response => {
+        this.searchString = "";
+        this.saveByteArray(response.data)
       });
-      client.write(searchString);
-      client.end();
+    },
+    saveByteArray(responseBody) {
+      const url = window.URL.createObjectURL(new Blob([responseBody], {
+        type: "arraybuffer"
+      }));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "sheet.pdf");
+      document.body.appendChild(link);
+      link.click();
     }
   }
 };
@@ -64,7 +64,7 @@ export default {
 div#convert {
   background: #6E67A9;
   border-radius: 84px;
-	padding: 0% 14% ;
+	padding: 0% 14%;
 	text-align: center;
 	text-decoration: none;
 	font-weight: 700;

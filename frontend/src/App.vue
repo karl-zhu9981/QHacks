@@ -3,11 +3,10 @@
     <link rel='stylesheet' id='google-fonts-1-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.5.3' type='text/css' media='all' />
     <div id="nav">
       <router-link :to="{ name: 'home' }">
-        <img class= "logo" alt="Youtune" src="@/assets/Youtune.png" width='30px'>
+        <img class= "logo" alt="Youtune" src="@/assets/Youtune.png" width='35px'>
       </router-link>
       <router-link :to="{ name: 'home' }">Home</router-link>
       <router-link :to="{ name: 'about' }">  About </router-link>
-      <router-link :to="{ name: 'dashboard' }">  LOGIN </router-link>
     </div>
     <router-view/>
   </div>
@@ -19,8 +18,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsl(0, 0%, 100%);
-  padding: 130px;
-  padding-top:60px;
+  padding: calc((100vh - 957px) / 2 + 75px) 130px calc((100vh - 957px) / 2 - 75px);
 }
 #nav {
   padding-bottom: 110px;
@@ -30,6 +28,7 @@
     color: #686767;
     text-decoration: none;
     word-spacing: 80px;
+    font-size: 26px;
     &.router-link-exact-active {
       color: #18181A;
       text-decoration: none;
