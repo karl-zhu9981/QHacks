@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\backend",
+    "\\frontend",
+    "\\midiconversion"
+  ],
+  "SelectedNode": "\\midiconversion\\receiver.py",
+  "PreviewInSolutionExplorer": false
+}
