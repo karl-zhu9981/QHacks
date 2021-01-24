@@ -15,7 +15,7 @@ module.exports = async searchString => {
 
   console.log(songInfo.videoDetails.lengthSeconds);
 
-  ytdl.downloadFromInfo(songInfo, { filter: "audioonly" }).pipe(fs.createWriteStream(`./downloads/${ songInfo.videoDetails.videoId }.wav`));
+  return ytdl.downloadFromInfo(songInfo, { filter: "audioonly" });
 };
 
 async function resolveSongUrl(searchString) {

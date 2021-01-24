@@ -4,6 +4,7 @@ downloads
 frontend/dist
 firebase-debug.log
 .firebase
+config.json
 
 # local env files
 .env.local
