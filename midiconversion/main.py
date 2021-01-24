@@ -139,8 +139,7 @@ def parse_args():
 
 
 def main():
-    try:
-        args = []
+        args = parse_args()
         process = converter.Converter(
             infile="default.wav",
             outfile="out.mid",
