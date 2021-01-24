@@ -61,7 +61,7 @@ export default {
 div#convert {
   background: #6E67A9;
   border-radius: 84px;
-	padding: 0% 14% ;
+	padding: 0% 14%;
 	text-align: center;
 	text-decoration: none;
 	font-weight: 700;
