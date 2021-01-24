@@ -53,6 +53,7 @@ input[type=text], select {
   max-width: 70%;
   float: right;
 }
+
 .row::after {
   content: "";
   clear: both;
@@ -70,13 +71,14 @@ h2{
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
-  color: #6E67A9;
+  color: #A397EF;
 }
 h3{
   font-family: Montserrat;
   font-style: normal;
-  font-weight: normal;
-  color: #18181A;
+  font-weight: 900;
+  font-size: 5.0rem;
+  color:#6E67A9;
 }
 h4{
   font-family: Montserrat;
