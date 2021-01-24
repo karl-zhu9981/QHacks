@@ -10,7 +10,7 @@ http.createServer((request, response) => {
     "Content-Type": "application/pdf",
     "Access-Control-Allow-Origin": "*"
   });
-// https://www.youtube.com/watch?v=QkqyD7TOr7Q
+
   let chunks = [];
 
   request.on("data", chunk => chunks.push(chunk));
